@@ -1,0 +1,4 @@
+{application,funbox,
+	    [{descripttion,"Generate random digits"},
+	     {vsn,"0.1.0"},
+	     {applications,[kernel,stdlib]}]}.
