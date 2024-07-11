@@ -1,0 +1,10 @@
+{application,digits,
+	    [{descripttion,"Generate random digits"},
+	     {vsn,"0.1.0"},
+	     {registered,[]},
+	     {mod,{digits_app,[]}},
+	     {applications,[kernel,stdlib]},
+	     {env,[]},
+	     {modules,[digits_is_prime]},
+	     {licences,["No licenses"]},
+	     {links,[]}]}.
