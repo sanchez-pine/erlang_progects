@@ -1,1 +1,0 @@
--module(funbox_app).
