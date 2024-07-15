@@ -1,0 +1,6 @@
+_build
+*beam
+.eunit
+_build
+.rebar
+rebar3.crashdump
