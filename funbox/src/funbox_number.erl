@@ -14,12 +14,12 @@ is_prime(N, I, Max)   ->
 	    is_prime(N, I+1, Max)
     end.
 
-random(N, Count) when N > 2  -> 
+random(N, Count)         ->
     random(N, Count, 0, []).
 
-random(_, Max, Max, Acc) -> 
+random(_, Max, Max, Acc) ->
     Acc;
-random(N, Count, I, Acc)     ->
+random(N, Count, I, Acc) ->
     H = rand:uniform(N),
     if
         H =:= 1 ->
