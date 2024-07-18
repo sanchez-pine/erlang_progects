@@ -1,4 +1,7 @@
 {application,funbox,
-	    [{descripttion,"Generate random digits"},
+	    [
+	     {descripttion,"Generate random digits"},
 	     {vsn,"0.1.0"},
-	     {applications,[kernel,stdlib]}]}.
+	     {applications,[kernel,stdlib]},
+	     {modules,[eredis_SUITE]}
+	    ]}.

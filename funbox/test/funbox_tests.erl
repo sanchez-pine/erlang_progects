@@ -1,20 +1,18 @@
 -module(funbox_tests).
 -include_lib("eunit/include/eunit.hrl").
 
-prime_test() ->
-    ?assert(funbox:is_prime(5)),
-    ?assertNot(funbox_number:is_prime(6)).
+prime_test_() ->
+    [
+    ?_assert(funbox_number:is_prime(5)),
+    ?_assertNot(funbox_number:is_prime(6)),
+    ?_assertException(error, function_clause, funbox_number:is_prime(-1)),
+    ?_assertException(error, function_clause, funbox_number:is_prime(0)),
+    ?_assertException(error, function_clause, funbox_number:is_prime(1))
+    ].
 
-
-%%recursion_test(N) -> 
-%%    recursion_test(N, 2, erlang:trunc(math:sqrt(N)+1)).
-%%recursion_test(_, Max, Max) ->
-%%    true;
-%%recursion_test(N, I, Max) ->
-%%    if
-%%	N dev I =:= 0 ->
-%%	    ?assertNot(digit_is_prime:is_prime(N));
-%%	true ->
-%%	    ?assert(digit_is_prime:is_prime(N))
-%%	    recursion_test(N, I+1, Max)
-%%    end.
+random_test_() -> 
+    [
+    ?_assert(is_number(funbox_number:random(2, 10))),
+    ?_assert(is_integer(funbox_number:random(2, 10))),
+    ?_assert(lists:member(funbox_number:random(2, 10), lists:seq(2, 10)))
+    ].
